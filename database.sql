@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS online_banking;
-USE online_banking;
+CREATE DATABASE IF NOT EXISTS bank;
+USE bank;
 
 -- 1. Bank
 CREATE TABLE IF NOT EXISTS Bank (

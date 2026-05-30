@@ -25,6 +25,32 @@ app.use('/api/loans', loanRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/features', featureRoutes);
 
+// Public Health Check Route
+app.get('/api/status', async (req, res) => {
+    try {
+        const pool = require('./db');
+        await pool.query('SELECT 1');
+        res.json({
+            status: '✅ ONLINE',
+            system: 'Paytona Core Backend',
+            database: 'Connected (bank)',
+            timestamp: new Date().toISOString()
+        });
+    } catch (err) {
+        res.status(500).json({ status: '❌ OFFLINE', error: err.message });
+    }
+});
+const path = require('path');
+
+// Serve static assets from React build in production
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, 'dist')));
+    
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+    });
+}
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
