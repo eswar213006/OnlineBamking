@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: paytona-banking
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        value: super_secret_jwt_key_12345
+      - key: DB_PORT
+        value: "3306"
+      - key: DB_HOST
+        sync: false
+        placeholder: "e.g., mysql-xxx.aivencloud.com"
+      - key: DB_USER
+        sync: false
+        placeholder: "e.g., avnadmin"
+      - key: DB_PASSWORD
+        sync: false
+        placeholder: "Your cloud database password"
+      - key: DB_NAME
+        sync: false
+        placeholder: "e.g., defaultdb or bank"
