@@ -24,17 +24,17 @@
     "react-dom": "^18.3.1",
     "react-hot-toast": "^2.6.0",
     "react-router-dom": "^6.17.0",
-    "recharts": "^3.8.1"
-  },
-  "devDependencies": {
+    "recharts": "^3.8.1",
     "@tailwindcss/postcss": "^4.2.4",
     "@tailwindcss/vite": "^4.2.4",
     "@vitejs/plugin-react": "^5.2.0",
     "autoprefixer": "^10.4.19",
-    "concurrently": "^9.2.1",
-    "playwright": "^1.59.1",
     "postcss": "^8.4.39",
     "tailwindcss": "^4.2.4",
     "vite": "^5.4.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "playwright": "^1.59.1"
   }
 }
